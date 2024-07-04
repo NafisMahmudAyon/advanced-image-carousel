@@ -1,4 +1,23 @@
-import Image from "next/image";
+// import Image from "next/image";
+
+
+import ImageCarousel from "./src/components/ImageCarousel/ImageCarousel";
+import ImageCarouselItem from "./src/components/ImageCarousel/ImageCarouselItem";
+import '@splidejs/react-splide/css'
+
+
+const images = [
+  'https://images.pexels.com/photos/459038/pexels-photo-459038.jpeg?cs=srgb&dl=pexels-pixabay-459038.jpg&fm=jpg&h=400&w=600&fit=crop',
+  'https://images.pexels.com/photos/6877872/pexels-photo-6877872.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-222549-6877872.jpg&fm=jpg&h=400&w=600&fit=crop',
+  'https://images.pexels.com/photos/957039/hut-alpine-mountains-bavaria-957039.jpeg?cs=srgb&dl=pexels-felixmittermeier-957039.jpg&fm=jpg&h=400&w=600&fit=crop',
+  'https://images.pexels.com/photos/365668/pexels-photo-365668.jpeg?cs=srgb&dl=pexels-dana-tentis-118658-365668.jpg&fm=jpg&h=400&w=600&fit=crop',
+];
+
+const breakpoints = {
+  768: 1, // 1 item per page for screen widths <= 768px
+  1024: 2, // 2 items per page for screen widths <= 1024px
+};
+
 
 export default function Home() {
   return (
@@ -16,27 +35,39 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            
           </a>
         </div>
       </div>
-
+      <ImageCarousel 
+        options={{
+          type: 'loop',
+          perPage: 1,
+          perMove: 1,
+          gap: '10px',
+          autoplay: 'pause',
+          interval: 1000,
+          pauseOnHover: true,
+          rewind: true,
+          pagination: true,
+          arrows: false,
+          drag: true,
+        }}
+      >
+        {images.map((src, index) => (
+          <ImageCarouselItem
+            key={index}
+          >
+            <img src={src}
+              // width={600}
+              // height={400}
+              // objectFit="cover"
+              alt="Image" />
+          </ImageCarouselItem>
+        ))}
+      </ImageCarousel>
       <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+        
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
