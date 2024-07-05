@@ -8,7 +8,7 @@ interface ImageCarouselItemProps {
 
 const ImageCarouselItem: React.FC<ImageCarouselItemProps> = ({children}) => {
   return (
-    <SplideSlide>{children}</SplideSlide>
+    <SplideSlide className='mx-auto'>{children}</SplideSlide>
   )
 }
 

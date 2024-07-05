@@ -3,7 +3,7 @@
 
 import ImageCarousel from "./src/components/ImageCarousel/ImageCarousel";
 import ImageCarouselItem from "./src/components/ImageCarousel/ImageCarouselItem";
-import '@splidejs/react-splide/css'
+// import '@splidejs/react-splide/css'
 
 
 const images = [
@@ -50,7 +50,7 @@ export default function Home() {
           pauseOnHover: true,
           rewind: true,
           pagination: true,
-          arrows: false,
+          arrows: true,
           drag: true,
         }}
       >
@@ -62,6 +62,7 @@ export default function Home() {
               // width={600}
               // height={400}
               // objectFit="cover"
+              className="object-contain w-full"
               alt="Image" />
           </ImageCarouselItem>
         ))}
