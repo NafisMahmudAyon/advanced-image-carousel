@@ -52,7 +52,20 @@ export default function Home() {
           pagination: true,
           arrows: true,
           drag: true,
+          breakpoints: {
+            "720": {
+              perPage: 2,
+              perMove: 1,
+              gap: '20px',
+            },
+            "1020": {
+              perPage: 3,
+              perMove: 2,
+              gap: '20px',
+            },
+          }
         }}
+        prevArrowStyle="bg-red-500 text-red-500"
       >
         {images.map((src, index) => (
           <ImageCarouselItem
