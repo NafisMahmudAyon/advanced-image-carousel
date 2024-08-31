@@ -13,10 +13,10 @@ const images = [
   'https://images.pexels.com/photos/365668/pexels-photo-365668.jpeg?cs=srgb&dl=pexels-dana-tentis-118658-365668.jpg&fm=jpg&h=400&w=600&fit=crop',
 ];
 
-const breakpoints = {
-  768: 1, // 1 item per page for screen widths <= 768px
-  1024: 2, // 2 items per page for screen widths <= 1024px
-};
+// const breakpoints = {
+//   768: 1, // 1 item per page for screen widths <= 768px
+//   1024: 2, // 2 items per page for screen widths <= 1024px
+// };
 
 
 export default function Home() {
@@ -76,7 +76,7 @@ export default function Home() {
               // height={400}
               // objectFit="cover"
               className="object-contain w-full"
-              alt="Image" />
+              alt={"Image"+index+1} />
           </ImageCarouselItem>
         ))}
       </ImageCarousel>

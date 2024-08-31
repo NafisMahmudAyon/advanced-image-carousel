@@ -3,9 +3,9 @@
 import { Splide, SplideTrack, Options } from '@splidejs/react-splide';
 // import React, { ReactElement } from 'react';
 // import ImageCarouselItem from './ImageCarouselItem';
-import '@splidejs/react-splide/css'
+// import '@splidejs/react-splide/css'
 // import './splide.min.js'
-// import "@splidejs/splide/dist/css/splide-core.min.css";
+import "@splidejs/splide/dist/css/splide.min.css";
 import { Arrow, Pause, Play } from '../Icon';
 // import { useEffect } from 'react';
 
